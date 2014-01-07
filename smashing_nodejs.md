@@ -39,9 +39,11 @@
             fn.call(obj, 'first', 'second');
             fn.apply(obj, ['first', 'second']);
     2. 函数有一个属性为`length`，返回函数声明时的参数数量。
+
             function fn(a, b, c){}
             console.log(fn.length); // 3
     3. 闭包。在某个作用域中定义的变量，只能在该作用域或其内部作用域中才能访问到。
+
             var a = 5;
             function woot(){
                 console.log(a); // 5 实际测试中为undefined
@@ -52,7 +54,9 @@
                 test();
             }
             woot();
+
         自执行函数机制。声明和调用一个匿名函数，能够达到仅定义一个新作用域的作用。
+
             var a = 3;
             (function(){
                 var a = 5;
@@ -62,16 +66,21 @@
 
 3. 类
     1. 类的定义。通过函数定义。
+
             function Person($name){
                 this.name = $name;
             }
     2. 类的实例。
+
             var p = new Person('esinger');
     3. 类的方法。指类的实例具有的方法。可以使用prototype属性来定义。
+
            Person.prototype.say = function(){
                 console.log(this.name);
            }
+
         在方法内部，`this`关键字指向的是通过该类创建的实例对象。
+
             // 一个完整实例
             // 定义类
             function Person(name) {
@@ -90,6 +99,7 @@
 
     4. 类的静态方法。
     5. 类的继承。基于原型模拟类继承。
+
             // 新建一个子类
             function Men(name) {
                 this.name = name;
