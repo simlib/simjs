@@ -24,13 +24,14 @@
             function fn(){
                 console.log(window == this); // true
             }
-       使用`call`和`apply`方法可以改变函数中`this`的值。
+    使用`call`和`apply`方法可以改变函数中`this`的值。
 
             function fn(){
                 console.log(this.name); // zhang
             }
             fn.call({name: 'zhang'});
-        `call`和`apply`的区别是，`call`接受参数列表，`apply`接受一个参数数组。
+    `call`和`apply`的区别是，`call`接受参数列表，`apply`接受一个参数数组。
+
             function fn(arg1,arg2){
                 console.log(arg1); // first
                 console.log(arg2); // second
@@ -55,7 +56,7 @@
             }
             woot();
 
-        自执行函数机制。声明和调用一个匿名函数，能够达到仅定义一个新作用域的作用。
+    自执行函数机制。声明和调用一个匿名函数，能够达到仅定义一个新作用域的作用。
 
             var a = 3;
             (function(){
@@ -79,7 +80,7 @@
                 console.log(this.name);
            }
 
-        在方法内部，`this`关键字指向的是通过该类创建的实例对象。
+    在方法内部，`this`关键字指向的是通过该类创建的实例对象。
 
             // 一个完整实例
             // 定义类
