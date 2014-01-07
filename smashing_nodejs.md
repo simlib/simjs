@@ -123,4 +123,6 @@
             m1.say(); // wang
             m1.intro(); // wang/male
 
-> 雨中歌者 2014-01-07
+> 雨中歌者
+> 2014-01-07
+> http://weibo.com/esinger
