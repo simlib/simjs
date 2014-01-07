@@ -6,6 +6,7 @@
     1. 基本类型，包括 `number`、 `boolean`、 `string`、 `null`、 `undefined`。访问基础类型，访问的是值。
     2. 复杂类型，包括 `array`、 `function`、 `object`。访问复杂类型，访问的是值的引用。
     3. 一些特定的值。下面的一些值被认为等于`false`：`null`、 `undefined`、 `空格`、`0`。
+            
             var a = 0;
             if (a){
                 // 这里不会执行
@@ -19,10 +20,12 @@
 
 2. 函数
     1. 在一个函数中，`this`的值是全局对象，在浏览器中，就是`window`对象。
+
             function fn(){
                 console.log(window == this); // true
             }
        使用`call`和`apply`方法可以改变函数中`this`的值。
+
             function fn(){
                 console.log(this.name); // zhang
             }
