@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script>
+
+    //    var a = 5;
+    //    function woot() {
+    //        alert(a); // ?
+    //        var a = 6;
+    //
+    //        function test() {
+    //            alert(a); // ?
+    //        }
+    //
+    //        test();
+    //    }
+    //    woot();
+
+    //
+    //var a = 3;
+    //(function(){
+    //    var a = 5;
+    //    console.log(a);
+    //})();
+    //console.log(a);
+
+    function Person(name) {
+        this.name = name;
+    }
+
+    Person.prototype.say = function () {
+        console.log(this.name);
+    }
+
+    var p1 = new Person('zhang');
+    p1.say(); // zhang
+
+    var p2 = new Person('liu');
+    p2.say(); // liu
+
+    // 新建一个子类
+    function Men(name) {
+        this.name = name;
+    }
+    // 把父类的一个实例赋给字类的prototype
+    Men.prototype = new Person();
+    // 定义子类的属性
+    Men.prototype.sex = 'male';
+    // 重构方法
+    Men.prototype.say = function(){
+        Person.prototype.say.call(this);
+        // 添加新的业务
+        console.log(this.sex);
+    }
+    // 定义子类的方法
+    Men.prototype.intro = function () {
+        console.log(this.name + ' ' + this.sex);
+    }
+    // 新建一个实例
+    var m1 = new Men('wang');
+    m1.say();
+    m1.intro();
+
+</script>
+</body>
+</html>
