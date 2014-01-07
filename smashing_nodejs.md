@@ -10,19 +10,15 @@
             if (a){
                 // 这里不会执行
             }
-
             a == false; // true
             a === false; // false
-
             typeof null == 'object'; // true
             typeof [] == 'object'; // true
-
             // 判断是否数组
             Object.prototype.toString.call([]) == '[object Array]';
 
 2. 函数
     1. 在一个函数中，`this`的值是全局对象，在浏览器中，就是`window`对象。
-
             function fn(){
                 console.log(window == this); // true
             }
@@ -78,16 +74,13 @@
             function Person(name) {
                 this.name = name;
             }
-
             // 定义类的方法
             Person.prototype.say = function () {
                 console.log(this.name);
             }
-
             // 创建一个实例
             var p1 = new Person('zhang');
             p1.say(); // zhang
-
             // 创建另一个实例
             var p2 = new Person('liu');
             p2.say(); // liu
