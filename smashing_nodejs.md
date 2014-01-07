@@ -1,4 +1,4 @@
-#了不起的Node.js读书笔记
+#《了不起的Node.js》读书笔记（1）
 
 ## 第二章 JavaScript概览
 ### 一、JavaScript基础
@@ -122,3 +122,5 @@
             var m1 = new Men('wang');
             m1.say(); // wang
             m1.intro(); // wang/male
+
+> 雨中歌者 2014-01-07
