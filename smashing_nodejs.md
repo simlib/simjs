@@ -79,7 +79,6 @@
            Person.prototype.say = function(){
                 console.log(this.name);
            }
-
     在方法内部，`this`关键字指向的是通过该类创建的实例对象。
 
             // 一个完整实例
