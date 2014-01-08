@@ -123,6 +123,84 @@
             m1.say(); // wang
             m1.intro(); // wang/male
 
-> 雨中歌者
-> 2014-01-07
-> http://weibo.com/esinger
+4. V8中的JavaScript
+    1. `Object.keys`，获取对象上所有的自有键。
+
+            var obj = {a: 'aa', b: 'bb'};
+            console.log(Object.keys(obj); // ['a', 'b']
+    2. `Array.isArray`，检查是否为数组。
+
+            var arr = [];
+            console.log(typeof arr); // object
+            console.log(Array.isArray(arr)); // true
+    3. `forEach`，遍历数组。
+
+                [1, 2, 3].forEach(function (v) {
+                    console.log(v); // 打印输出1,2,3
+                });
+
+    4. `filter`，过滤数组元素。
+
+                var arr = [1, 2, 3];
+                console.log(arr.filter(function (v) {
+                    return v < 3;
+                })); // 输出[1, 2]
+                console.log(arr); // 输出[1, 2, 3]
+    5. `map`，遍历数组，返回每个元素计算后的值组成的新数组。
+
+                var arr = [1, 2, 3];
+                console.log(arr.map(function (v) {
+                    return v * 2;
+                })); // 输出[2, 4, 6]
+                console.log(arr); // 输出[1, 2, 3]
+    6. 字符串方法 `trim`，移除字符串首末的空格。
+
+                console.log(' hello  '.trim()); // hello
+    5. JSON `JSON.stringify` 解码，把JSON对象转换成字符串 `JSON.parse` 编码，把字符串转换成JSON对象。
+
+                var a = {a:1,b:2};
+                var b = JSON.stringify(a);
+                var c = JSON.parse(b);
+                console.log(a); // Object {a: 1, b: 2}
+                console.log(typeof a); // object
+                console.log(b); // {"a":1,"b":2}
+                console.log(typeof b); // string
+                console.log(c); // Object {a: 1, b: 2}
+                console.log(typeof c); // object
+    6. 继承 `__proto__`
+
+            function Person(name){
+                this.name = name;
+            }
+        
+            Person.prototype.say = function(){
+                console.log(this.name);
+            }
+        
+            var p = new Person('zhang');
+            p.say(); // zhang
+        
+            function Men(name){
+                this.name = name;
+            }
+        
+            Men.prototype.__proto__ = Person.prototype;
+        
+            var m = new Men('wang');
+            m.say(); // wang
+    7. 存取器，通过调用方法来定义属性。
+        1. `__defineGetter__`
+        2. `__defineSetter__`
+
+                Date.prototype.__defineGetter__('year', function(){
+                    return this.getFullYear();
+                });
+            
+                Date.prototype.__defineSetter__('year', function(value){
+                    this.setFullYear(value);
+                });
+            
+                var d = new Date();
+                console.log(d.year); // 2014
+                d.year = 2008;
+                console.log(d.getFullYear()); // 2008
